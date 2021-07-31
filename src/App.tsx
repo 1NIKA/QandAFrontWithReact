@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import { fontFamily, fontSize, gray2 } from './Styles';
+
+import { Header } from './Header';
+import { HomePage } from './HomePage';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AskPage } from './AskPage';
+import { SearchPage } from './SearchPage';
+import { SignInPage } from './SignInPage';
+import { NotFoundPage } from './NotFoundPage';
+import { QuestionPage } from './QuestionPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div
+        css={css`
+          font-family: ${fontFamily};
+          font-size: ${fontSize};
+          color: ${gray2};
+        `}
+      >
+        <Header />
+        <Routes>
+          <Route path="" element={<HomePage />} />
+          <Route path="search" element={<SearchPage />} />
+          <Route path="ask" element={<AskPage />} />
+          <Route path="signin" element={<SignInPage />} />
+          <Route path="questions/:questionId" element={<QuestionPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+// Page 163
