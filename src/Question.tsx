@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { gray2, gray3 } from './Styles';
 
 import React from 'react';
-import { QuestionData } from './QuestionData';
+import { QuestionData } from './QuestionsData';
 import { Link } from 'react-router-dom';
 
 interface Props {

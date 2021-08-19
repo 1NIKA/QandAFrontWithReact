@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 
 import React from 'react';
-import { QuestionData } from './QuestionData';
+import { QuestionData } from './QuestionsData';
 import { Question } from './Question';
 import { accent2, gray5 } from './Styles';
 
