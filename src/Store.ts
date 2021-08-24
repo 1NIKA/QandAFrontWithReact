@@ -7,7 +7,6 @@ interface QuestionState {
   readonly viewing: QuestionData | null;
   readonly searched: QuestionData[];
 }
-
 export interface AppState {
   readonly questions: QuestionState;
 }
