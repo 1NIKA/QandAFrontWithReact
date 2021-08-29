@@ -24,18 +24,20 @@ export const QuestionList = ({ data, renderItem }: Props) => (
       box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
     `}
   >
-    {data.map((question) => (
-      <li
-        key={question.questionId}
-        css={css`
-          border-top: 1px solid ${gray5};
-          :first-of-type {
-            border-top: none;
-          }
-        `}
-      >
-        {renderItem ? renderItem(question) : <Question data={question} />}
-      </li>
-    ))}
+    {data
+      .map((question) => (
+        <li
+          key={question.questionId}
+          css={css`
+            border-top: 1px solid ${gray5};
+            :first-of-type {
+              border-top: none;
+            }
+          `}
+        >
+          {renderItem ? renderItem(question) : <Question data={question} />}
+        </li>
+      ))
+      .reverse()}
   </ul>
 );

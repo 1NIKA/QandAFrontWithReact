@@ -40,7 +40,7 @@ export const AskPage = () => {
   return (
     <Page title="Ask a question">
       <form onSubmit={handleSubmit(submitForm)}>
-        <Fieldset disabled={formState.isSubmitted || successfullySubmitted}>
+        <Fieldset disabled={formState.isSubmitting || successfullySubmitted}>
           <FieldContainer>
             <FieldLabel htmlFor="title">Title</FieldLabel>
             <FieldInput
@@ -52,8 +52,8 @@ export const AskPage = () => {
                 minLength: 10,
               })}
             />
-            {errors.title && errors.title?.type === 'required' && (
-              <FieldError>You must enter the question title</FieldError>
+            {errors.title && errors.title.type === 'required' && (
+              <FieldError>Your must enter the question title</FieldError>
             )}
             {errors.title && errors.title.type === 'minLength' && (
               <FieldError>The title must be at least 10 characters</FieldError>
@@ -70,7 +70,7 @@ export const AskPage = () => {
               })}
             />
             {errors.content && errors.content.type === 'required' && (
-              <FieldError>You must enter the question content</FieldError>
+              <FieldError>Your must enter the question content</FieldError>
             )}
             {errors.content && errors.content.type === 'minLength' && (
               <FieldError>
@@ -93,4 +93,3 @@ export const AskPage = () => {
 };
 
 export default AskPage;
-// Page 200
